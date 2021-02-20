@@ -1,19 +1,83 @@
-{% extends "base.html" %}
+<html lang="en">
+<head>
+    <title>Home|Travel Buddy</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style1.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-{% block content %}
-    
-    <div class="box">
-	<form>
-		<span class="text-center">login</span>
-	<div class="input-container">
-		<input type="text" required=""/>
-		<label>Full Name</label>		
-	</div>
-	<div class="input-container">		
-		<input type="mail" required=""/>
-		<label>Email</label>
-	</div>
-		<button type="button" class="btn">submit</button>
-    </form>	
-    </div>
-{% endblock %}
+</head>
+<body>
+         <div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="/index" class="w3-bar-item w3-button" style="color:black">HOME</a>
+    <a href="/picture" class="w3-bar-item w3-button w3-hide-small" style="color:black"><i class="fa fa-user"></i> IMAGE CAPTION</a>
+    <a href="/text" class="w3-bar-item w3-button w3-hide-small" style="color:black"><i class="fa fa-user"></i> TEXT RECOGNITION</a>
+    <a href="/about" class="w3-bar-item w3-button w3-hide-small" style="color:black"><i class="fa fa-envelope"></i> ABOUT</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">IMAGE CAPTION</a>
+    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">TEXT RECOGNITION</a>
+    <a href="/about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+  </div>
+</div>
+      <div class="w3-center">
+      <div class="container">
+      <p style="color:black;">ONE APP FOR <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+      </div>
+      </div>
+      <script>
+      const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = ["RECOGNITION", "SELF-RELIANCE", "CONFIDENCE", "FOOD", "TRAVEL"];
+const typingDelay = 100;
+const erasingDelay = 50;
+const newTextDelay = 500; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+  	setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+	if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } 
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
+      </script>
+
+</body>
+</html>

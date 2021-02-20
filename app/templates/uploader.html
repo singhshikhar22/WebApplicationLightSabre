@@ -10,7 +10,7 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
-  color: #777;
+  color: #000;
   line-height: 1.8;
 }
 
@@ -24,19 +24,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url("/backgrounds/banner.jpg");
-  min-height: 50%;
+  background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  min-height: 80%;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url("/w3images/parallax2.jpg");
+  background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   min-height: 400px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("/w3images/parallax3.jpg");
+  background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   min-height: 400px;
 }
 
@@ -58,8 +58,9 @@ body, html {
       <i class="fa fa-bars"></i>
     </a>
     <a href="/index" class="w3-bar-item w3-button">HOME</a>
-    <a href="/picture" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Image Caption</a>
-    <a href="/about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> About</a>
+    <a href="/picture" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> IMAGE CAPTION</a>
+    <a href="/text" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> TEXT RECOGNITION</a>
+    <a href="/about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> ABOUT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
     </a>
@@ -67,10 +68,28 @@ body, html {
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">Image Caption</a>
-    <a href="/about" class="w3-bar-item w3-button" onclick="toggleFunction()">About</a>
+    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">IMAGE CAPTION</a>
+    <a href="/about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
   </div>
 </div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">TRAVEL</span> BUDDY</span>
+  </div>
+</div>
+
+<hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <h3 class="w3-center" style="color:black">{{ message }}</h3>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
 
 <div class="w3-center">
 <div class="zone">

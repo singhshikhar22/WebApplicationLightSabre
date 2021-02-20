@@ -24,19 +24,13 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('file:///D:/Previous%20Laptop/vit%20materials/Projects/WebApplicationLightSabre/app/templates/backgrounds/banner.jpg');
-  min-height: 50%;
-}
-
-/* Second image (Portfolio) */
-.bgimg-2 {
-  background-image: url('file:///D:/Previous%20Laptop/vit%20materials/Projects/WebApplicationLightSabre/app/templates/backgrounds/banner.jpg');
-  min-height: 400px;
+  background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  min-height: 80%;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url('file:///D:/Previous%20Laptop/vit%20materials/Projects/WebApplicationLightSabre/app/templates/backgrounds/banner.jpg');
+  background-image: url("https://images.pexels.com/photos/891252/pexels-photo-891252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   min-height: 400px;
 }
 
@@ -59,9 +53,10 @@ body, html {
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="/index" class="w3-bar-item w3-button">HOME</a>
-    <a href="/picture" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Image Caption</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="/index" class="w3-bar-item w3-button" style="color:black">HOME</a>
+    <a href="/picture" class="w3-bar-item w3-button w3-hide-small" style="color:black"><i class="fa fa-user"></i> IMAGE CAPTION</a>
+    <a href="/text" class="w3-bar-item w3-button w3-hide-small" style="color:black"><i class="fa fa-user"></i> TEXT RECOGNITION</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small" style="color:black"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
     </a>
@@ -69,8 +64,9 @@ body, html {
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">Image Caption</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">IMAGE CAPTION</a>
+    <a href="/picture" class="w3-bar-item w3-button" onclick="toggleFunction()">TEXT RECOGNITION</a>
+    <a href="/about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
   </div>
 </div>
 
@@ -84,53 +80,58 @@ body, html {
 
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I love photography</em></p>
-  <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-    qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <h3 class="w3-center">ABOUT US</h3>
+  <p>An application that recognizes images and automatically captions it in real time to help the user to understand the environment while travelling. This will give people insight about the things in their surroundings as well as guide them in their time of travel, airport, train stations, cruise ship, hotels, etc.
+</p>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
-      <img src="./backgrounds/banner.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      <p><b><i class="fa fa-user w3-margin-right"></i>Team LightSabre</b></p><br>
+      <img src="{{ url_for('static',filename='lightsabre_red.png') }}" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
     </div>
 
     <!-- Hide this text on small devices -->
     <div class="w3-col m6 w3-hide-small w3-padding-large">
-      <p>Welcome to my website. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p><li>Intuitive UI that makes it easy for the user to understand how to use the application and subsequently comprehend the result.</li>
+         <li>Accessible to all users, especially people with disabilities so that the application is universally acceptable.</li>
+         <li>Ensuring travel with minimal human intervention in the post-COVID world.</li>
+        <li>Give the travelers independence by giving them self-confidence and making them self-reliant. This will ensure that people don't feel alienated in new environment.</li>
+</p>
     </div>
   </div>
-  <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
-  <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+  <p class="w3-large w3-center w3-padding-16">Our Features</p>
+  <p class="w3-wide"><i class="fa fa-camera"></i>Image Captioning</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">80%</div>
   </div>
-  <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+  <p class="w3-wide"><i class="fa fa-laptop"></i>Text Recognition</p>
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
   </div>
-  <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
+  <p class="w3-wide"><i class="fa fa-photo"></i>Text to Speech</p>
   <div class="w3-light-grey">
-    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+    <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">90%</div>
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-wide" style="color:black">CONTACT</span>
   </div>
 </div>
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WHERE I WORK</h3>
-  <p class="w3-center"><em>I'd love your feedback!</em></p>
+  <h3 class="w3-center">WHERE WE WORK</h3>
+  <p class="w3-center"><em>Sabre India</em></p>
 
-  <div class="w3-row w3-padding-32 w3-section">
-    <div class="w3-col m4 w3-container">
-      <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
-    </div>
+  <div class="w3-row w3-padding-32 w3-section w3-center">
+    
     <div class="w3-col m8 w3-panel">
       <div class="w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Chicago, US<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Bengaluru, Karnataka<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +91-9597396001<br>
+        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: shilpshikhar17@mail.com<br>
       </div>
       <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
       <form action="/action_page.php" target="_blank">
